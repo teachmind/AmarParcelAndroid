@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="enter_phone_number">Enter phone number</string>
+    <string name="enter_password">Enter password</string>
+    <string name="signup">Signup</string>
+</resources>

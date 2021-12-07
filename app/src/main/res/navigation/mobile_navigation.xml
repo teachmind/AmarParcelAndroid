@@ -3,13 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/splashFragment">
 
     <fragment
-        android:id="@+id/nav_home"
+        android:id="@+id/splashFragment"
+        android:name="com.makrosh.amarparcelandroid.ui.splash.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_nav_signup"
+            app:destination="@id/nav_signup" />
+        <action
+            android:id="@+id/action_splashFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_signup"
         android:name="com.makrosh.amarparcelandroid.ui.signup.SignupFragment"
         android:label="Sign Up"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_signup" >
+        <action
+            android:id="@+id/action_nav_signup_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_gallery"
@@ -18,8 +35,9 @@
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.makrosh.amarparcelandroid.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_home"
+        android:name="com.makrosh.amarparcelandroid.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
 </navigation>

@@ -1,4 +1,4 @@
-package com.makrosh.amarparcelandroid.ui.slideshow
+package com.makrosh.amarparcelandroid.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,13 +8,12 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.makrosh.amarparcelandroid.R
-import com.makrosh.amarparcelandroid.databinding.FragmentSlideshowBinding
+import com.makrosh.amarparcelandroid.databinding.FragmentHomeBinding
 
-class SlideshowFragment : Fragment() {
+class HomeFragment : Fragment() {
 
-    private lateinit var slideshowViewModel: SlideshowViewModel
-    private var _binding: FragmentSlideshowBinding? = null
+    private lateinit var homeFragmentViewModel: HomeFragmentViewModel
+    private var _binding: FragmentHomeBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -25,14 +24,14 @@ class SlideshowFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        slideshowViewModel =
-                ViewModelProvider(this).get(SlideshowViewModel::class.java)
+        homeFragmentViewModel =
+                ViewModelProvider(this).get(HomeFragmentViewModel::class.java)
 
-        _binding = FragmentSlideshowBinding.inflate(inflater, container, false)
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textSlideshow
-        slideshowViewModel.text.observe(viewLifecycleOwner, Observer {
+        homeFragmentViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root
