@@ -64,7 +64,7 @@ class SignupFragment : BaseFragment() {
     }
 
     private fun initUI() {
-        hideBackButton()
+        //hideBackButton()
 
         val seasonsList: MutableList<String> = mutableListOf()
         seasonsList.add("Category 1")

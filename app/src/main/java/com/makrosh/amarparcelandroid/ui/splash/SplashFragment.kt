@@ -47,7 +47,7 @@ class SplashFragment : BaseFragment() {
 
         Handler(Looper.getMainLooper()).postDelayed(
             {
-                findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToNavSignup())
+                findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToLoginFragment())
             }, 3000
         )
     }

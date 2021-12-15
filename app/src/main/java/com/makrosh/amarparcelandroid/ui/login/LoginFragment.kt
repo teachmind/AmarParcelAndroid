@@ -6,10 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.makrosh.amarparcelandroid.data.remote.Resource
 import com.makrosh.amarparcelandroid.databinding.FragmentLoginBinding
 import com.makrosh.amarparcelandroid.ui.BaseFragment
+import com.makrosh.amarparcelandroid.ui.splash.SplashFragmentDirections
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginFragment: BaseFragment() {
 
     private lateinit var loginViewModel: LoginViewModel
@@ -52,6 +56,14 @@ class LoginFragment: BaseFragment() {
 
     private fun initUI() {
         hideBackButton()
+
+        binding.tvForgetPassword.setOnClickListener {
+            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToForgetPasswordFragment())
+        }
+
+        binding.acbSignup.setOnClickListener {
+            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToNavSignup())
+        }
     }
 
     override fun onDestroyView() {
